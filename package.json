@@ -1,0 +1,13 @@
+{
+  "name": "firefox-addon-starter",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "web-ext build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "web-ext": "^7.5.0"
+  }
+}

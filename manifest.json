@@ -1,20 +1,20 @@
 {
-  "version": "1.0.0",
+  "manifest_version": 3,
+  "name": "Firefox Addon Name",
+  "version": "0.0.1",
 
+  "description": "...",
   "browser_specific_settings": {
     "gecko": {
-      "id": "...@domain.com"
+      "id": "firefox-addon-name@domain.com"
     }
+  },
+  "icons": {
+    "48": "logo.svg"
   },
   "action": {
     "default_icon": "logo.svg",
     "default_title": "...",
-    "default_popup": "https://.../"
-  },
-  "description": "popup page for ...",
-  "icons": {
-    "48": "logo.svg"
-  },
-  "manifest_version": 3,
-  "name": "Site name"
+    "default_popup": "popup.html"
+  }
 }
