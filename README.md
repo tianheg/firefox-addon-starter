@@ -1,10 +1,8 @@
 # Firefox Addon Starter
 
-> Firefox extension to open certain sites, use manifest v3.
-
 ```bash
-pnpm install -g web-ext
-web-ext build
+pnpm i
+pnpm build
 ```
 
 If `default_popup`'s value is `https://.../`, when clicking the addon icon, the site will pop-up.
