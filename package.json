@@ -1,13 +1,37 @@
 {
   "name": "firefox-addon-starter",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "web-ext build"
+  "description": "",
+  "version": "0.0.1",
+  "author": "tianheg (https://tianheg.xyz/)",
+  "devDependencies": {
+    "addons-linter": "^6.10.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-mozilla": "^3.1.0",
+    "eslint-plugin-no-unsanitized": "^4.0.2",
+    "mustache": "^4.2.0",
+    "npm-run-all": "^4.1.5",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
+    "web-ext": "^7.6.2"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "web-ext": "^7.5.0"
+  "homepage": "https://github.com/tianheg/...",
+  "license": "MPL-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianheg/.git"
+  },
+  "scripts": {
+    "start": "run-s build run",
+    "lint": "run-s lint:*",
+    "lint:addon": "npm run package && addons-linter ./addon.xpi -o text --self-hosted",
+    "lint:js": "eslint .",
+    "lint:styles": "stylelint ./addon/*.css",
+    "build": "run-s build:*",
+    "build:manifest": "node -e 'let input = JSON.parse(fs.readFileSync(\"package.json\"));Object.assign(input, process.env); console.log(JSON.stringify(input))' | mustache - addon/manifest.json.tmpl > addon/manifest.json",
+    "build:web-ext": "web-ext build --source-dir=addon --overwrite-dest --ignore-files '*.tmpl'",
+    "package": "npm run build && cp web-ext-artifacts/`ls -t1 web-ext-artifacts | head -n 1` addon.xpi",
+    "run": "mkdir -p ./Profile && web-ext run --source-dir=addon -p ./Profile --browser-console --keep-profile-changes -f firefox-developer-edition",
+    "test": "npm run lint"
   }
 }

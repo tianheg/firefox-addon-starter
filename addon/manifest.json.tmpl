@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Firefox Addon Name",
+  "version": "{{version}}",
+  "description": "{{description}}",
+  "author": "{{{author}}}",
+  "homepage_url": "{{{homepage}}}",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "firefox-addon-name@tianheg.xyz"
+    }
+  },
+  "icons": {
+    "48": ""
+  },
+  "action": {
+    "default_icon": "",
+    "default_title": "...",
+    "default_popup": "popup.html",
+    "browser_style": true
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "sidebar_action": {
+    "open_at_install": false,
+    "default_icon": "",
+    "default_title": "",
+    "default_panel": "sidebar.html"
+  },
+  "page_action": {
+    "default_icon": "",
+    "default_title": "...",
+    "show_matches": ["http://*/*", "https://*/*"],
+    "browser_style": true
+  },
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Ctrl+E"
+      }
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "contextMenus",
+    "webRequest",
+    "webRequestBlocking",
+    "bookmarks",
+    "management"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
