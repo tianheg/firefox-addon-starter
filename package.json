@@ -4,15 +4,15 @@
   "version": "0.0.1",
   "author": "tianheg (https://tianheg.xyz/)",
   "devDependencies": {
-    "addons-linter": "^6.10.0",
+    "addons-linter": "^7.13.0",
     "eslint": "^8.45.0",
     "eslint-plugin-mozilla": "^3.1.0",
     "eslint-plugin-no-unsanitized": "^4.0.2",
     "mustache": "^4.2.0",
     "npm-run-all": "^4.1.5",
-    "stylelint": "^15.10.2",
-    "stylelint-config-standard": "^34.0.0",
-    "web-ext": "^7.6.2"
+    "stylelint": "^16.20.0",
+    "stylelint-config-standard": "^38.0.0",
+    "web-ext": "^8.7.1"
   },
   "homepage": "https://github.com/tianheg/...",
   "license": "MPL-2.0",
